@@ -6,6 +6,7 @@
 		<title>Document</title>
 		<style>
 			div {
+                font-family: "system-ui";
 				max-width: 50%;
 
 				border: solid 1px rgb(220, 18, 99);
@@ -13,11 +14,16 @@
 
 				margin: 10px auto;
 				display: flex;
+                align-items: center;
 
 				flex-flow: wrap;
 				justify-content: space-between;
+                span{
+                    font-size: 1.2rem;
+                }
 				p {
 					width: 100%;
+                    display: none;
 				}
 				button {
 					background-color: rgb(220, 18, 99);
@@ -63,10 +69,9 @@
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
 
 		<script>
-			
-			$(document).ready(function () {
-		
-			});
+            $(function() {
+                $()
+            });
 		</script>
 	</body>
 </html>
