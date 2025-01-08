@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "system-ui";
+        }
+
+        ul {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        button {
+            background-color: transparent;
+            border: none;
+            background-color: yellow;
+            padding: 2rem;
+        }
+
+        button:hover {
+            cursor: pointer;
+            background-color: aqua;
+        }
+        section{
+            display: none;
+            width: 30%;
+            margin: auto;
+            background-color: red;
+            padding: 1rem;
+            color: white;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><button>Parrafo 1</button></li>
+                <li><button>Parrafo 2</button></li>
+                <li><button>Parrafo 3</button></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="sec1">
+            <h2>Seccion 1</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus quos sed earum ex error minima quod,
+                reiciendis delectus perferendis, fuga alias quis ducimus exercitationem rerum accusantium ullam vel
+                assumenda sit!</p>
+        </section>
+        <section id="sec2">
+            <h2>Seccion 2</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus quos sed earum ex error minima quod,
+                reiciendis delectus perferendis, fuga alias quis ducimus exercitationem rerum accusantium ullam vel
+                assumenda sit!</p>
+        </section>
+        <section id="sec3">
+            <h2>Seccion 3</h2>
+            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus quos sed earum ex error minima quod,
+                reiciendis delectus perferendis, fuga alias quis ducimus exercitationem rerum accusantium ullam vel
+                assumenda sit!</p>
+        </section>
+    </main>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+    <script>
+        $(function () {
+            $('button').on("click", function () {
+                if ($(this).text() == "Parrafo 1") {
+                    $("#sec1").show();
+                    $("#sec2").hide();
+                    $("#sec3").hide();
+                } else if ($(this).text() == "Parrafo 2") {
+                    $("#sec1").hide();
+                    $("#sec2").show();
+                    $("#sec3").hide();
+                } else if ($(this).text() == "Parrafo 3") {
+                    $("#sec1").hide();
+                    $("#sec2").hide();
+                    $("#sec3").show();
+                }
+            })
+        });
+    </script>
+</body>
+
+</html>
