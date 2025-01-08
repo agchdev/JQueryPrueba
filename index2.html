@@ -31,7 +31,6 @@
 
         button:hover {
             cursor: pointer;
-            background-color: rgb(206, 206, 206);
         }
         section{
             display: none;
@@ -40,6 +39,9 @@
             border: 1px solid black;
             padding: 1rem;
             color: black;
+        }
+        .active{
+            background-color: green;
         }
     </style>
 </head>
@@ -87,14 +89,20 @@
                     $("#sec1").show();
                     $("#sec2").hide();
                     $("#sec3").hide();
+                    $(this).toggleClass("active");
+                    $(this).parent().siblings().find('button').removeClass("active");
                 } else if ($(this).text() == p2) {
                     $("#sec1").hide();
                     $("#sec2").show();
                     $("#sec3").hide();
+                    $(this).toggleClass("active");
+                    $(this).parent().siblings().find('button').removeClass("active");
                 } else if ($(this).text() == p3) {
                     $("#sec1").hide();
                     $("#sec2").hide();
                     $("#sec3").show();
+                    $(this).toggleClass("active");
+                    $(this).parent().siblings().find('button').removeClass("active");
                 }
             })
         });
