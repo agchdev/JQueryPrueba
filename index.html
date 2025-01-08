@@ -30,8 +30,9 @@
 					background-color: rgb(220, 18, 99);
 					color: white;
 					border: none;
-					padding: 10px;
 					font-size: 1.5rem;
+                    width: 40px;
+                    height: 40px;
 				}
 			}
 		</style>
@@ -74,7 +75,8 @@
                 $('button').on("click",function(){
                     $(this).next().slideToggle(500);
                     $(this).text() == "+" ? $(this).text("-") : $(this).text("+");
-                    // $(this).text($(this).text() == "+" ? "-" : "+");
+                    $(this).parent().siblings().find('p').slideUp(500);
+                    $(this).parent().siblings().find('button').text("+");
                 })
             });
 		</script>
