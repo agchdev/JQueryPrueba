@@ -79,16 +79,19 @@
 
     <script>
         $(function () {
+            let p1 = "Parrafo 1";
+            let p2 = "Parrafo 2";
+            let p3 = "Parrafo 3";
             $('button').on("click", function () {
-                if ($(this).text() == "Parrafo 1") {
+                if ($(this).text() == p1) {
                     $("#sec1").show();
                     $("#sec2").hide();
                     $("#sec3").hide();
-                } else if ($(this).text() == "Parrafo 2") {
+                } else if ($(this).text() == p2) {
                     $("#sec1").hide();
                     $("#sec2").show();
                     $("#sec3").hide();
-                } else if ($(this).text() == "Parrafo 3") {
+                } else if ($(this).text() == p3) {
                     $("#sec1").hide();
                     $("#sec2").hide();
                     $("#sec3").show();
