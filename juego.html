@@ -10,18 +10,158 @@
             padding: 0;
             box-sizing: border-box;
         }
+        body{
+            background-color: rgb(178, 255, 255);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
         .circulo{
-            width: 100px;
-            height: 100px;
+            width: 50px;
+            height: 50px;
             border-radius: 50%;
-            background-color: red;
+            background-color: tomato;
             position: absolute;
+            top: 50%;
+            left: 50%;
+        }
+        .puntuacion{
+            font-family: "system-ui";
+            border-radius: 20px;
+            border: .5rem solid black;
+            background-color: white;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+        .tiempo{
+            font-family: "system-ui";
+            border-radius: 20px;
+            border: .5rem solid black;
+            background-color: white;
+            padding: 1rem 2rem;
+            font-size: 1.5rem;
+            font-weight: bolder;
+            margin-bottom: 1rem;
+            margin-top: 1rem;
+        }
+        .tablero{
+            position: relative;
+            width: 90%;
+            height: 80dvh;
+            border-radius: 1rem;
+            border: .5rem solid black;
+            background-color: white;
+        }
+        .datos{
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            gap: 1rem;
+        }
+        .modal{
+            display: none;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            z-index: 5;
             top: 0;
             left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(15px);
+        }
+        .modal > div{
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            font-family: "system-ui";
+            border-radius: 1rem;
+            border: .5rem solid black;
+            padding: 1rem;
+        }
+        .modal button{
+            background-color: green;
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 1rem;
+            border: none;
+            cursor: pointer;
+            border: .2rem solid black;
+            margin-top: 1rem;
+        }
+        .modal h1{
+            color: red;
+            text-shadow: 3px 3px 3px solid black;
         }
     </style>
 </head>
 <body>
+    
+    <div class="datos">
+        <div class="puntuacion">
+            <p>Puntaje: 0</p>
+        </div>
+        <div class="tiempo">
+            <p>Tiempo: 30</p>
+        </div>
+    </div>
+    <div class="tablero">
+        <div class="circulo"></div>
+    </div>
+    <div class="modal">
+        <div>
+            <h1>FIN DEL JUEGO</h1>
+            <p>Tu puntuacion fue:</p>
+            <button>Reiniciar</button>
+        </div>
+    </div>
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script>
+        $(function(){
+            let score = 0;
+            let time = 30;
+
+            function moverCirculo(){ {
+                let ventana_ancho = $(".tablero").width()-50;
+                let ventana_alto = $(".tablero").height()-50;
+                console.log(ventana_alto)
+                console.log(ventana_ancho)
+                let posX = (Math.floor(Math.random() * ventana_ancho));
+                let posY = (Math.floor(Math.random() * ventana_alto));
+                $(this).css("left", posX);
+                $(this).css("top", posY); 
+            }
+
+            setInterval(() => {
+                $(".tiempo p").text(`Tiempo: ${time}`);
+                time--;
+                if(time == 0){
+                    $(".modal").css("display", "flex");
+                    $(".modal p").text(`Tu puntuacion fue: ${score}`);
+                    $(".modal button").on("click", function(){
+                        location.reload();
+                    });
+                }
+            }, 1000);
+            
+            $(".circulo").on("click", function(){
+                moverCirculo();
+                score++;
+                $(".puntuacion p").text(`Puntaje: ${score}`);
+                let time = 1;
+                setTimeout(() => {
+                    moverCirculo();
+                }, 1000);
+            }); 
+        })
+    </script>
 </body>
 </html>
