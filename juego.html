@@ -125,19 +125,19 @@
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
     <script>
-        $(function(){
+        $(function (){
             let score = 0;
             let time = 30;
 
-            function moverCirculo(){ {
+            function moverCirculo(){ 
                 let ventana_ancho = $(".tablero").width()-50;
                 let ventana_alto = $(".tablero").height()-50;
                 console.log(ventana_alto)
                 console.log(ventana_ancho)
                 let posX = (Math.floor(Math.random() * ventana_ancho));
                 let posY = (Math.floor(Math.random() * ventana_alto));
-                $(this).css("left", posX);
-                $(this).css("top", posY); 
+                $(".circulo").css("left", posX);
+                $(".circulo").css("top", posY); 
             }
 
             setInterval(() => {
@@ -157,9 +157,7 @@
                 score++;
                 $(".puntuacion p").text(`Puntaje: ${score}`);
                 let time = 1;
-                setTimeout(() => {
-                    moverCirculo();
-                }, 1000);
+                
             }); 
         })
     </script>
