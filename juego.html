@@ -128,6 +128,7 @@
         $(function (){
             let score = 0;
             let time = 30;
+            let fallo;
 
             function moverCirculo(){ 
                 let ventana_ancho = $(".tablero").width()-50;
@@ -139,6 +140,12 @@
                 $(".circulo").css("left", posX);
                 $(".circulo").css("top", posY); 
             }
+
+            function creaInterval(){
+                fallo = setInterval(moverCirculo, 1000);
+            }
+
+            creaInterval();
 
             setInterval(() => {
                 $(".tiempo p").text(`Tiempo: ${time}`);
@@ -152,12 +159,15 @@
                 }
             }, 1000);
             
+            
+            
             $(".circulo").on("click", function(){
                 moverCirculo();
                 score++;
                 $(".puntuacion p").text(`Puntaje: ${score}`);
                 let time = 1;
-                
+                clearInterval(fallo);
+                creaInterval();
             }); 
         })
     </script>
