@@ -81,36 +81,36 @@
 
     <script>
         $(function () {
-            // let p1 = "Parrafo 1";
-            // let p2 = "Parrafo 2";
-            // let p3 = "Parrafo 3";
-            // $('button').on("click", function () {
-            //     if ($(this).text() == p1) {
-            //         $("#sec1").show();
-            //         $("#sec2").hide();
-            //         $("#sec3").hide();
-            //         $(this).toggleClass("active");
-            //         $(this).parent().siblings().find('button').removeClass("active");
-            //     } else if ($(this).text() == p2) {
-            //         $("#sec1").hide();
-            //         $("#sec2").show();
-            //         $("#sec3").hide();
-            //         $(this).toggleClass("active");
-            //         $(this).parent().siblings().find('button').removeClass("active");
-            //     } else if ($(this).text() == p3) {
-            //         $("#sec1").hide();
-            //         $("#sec2").hide();
-            //         $("#sec3").show();
-            //         $(this).toggleClass("active");
-            //         $(this).parent().siblings().find('button').removeClass("active");
-            //     }
-            // })
-
+            let p1 = "Parrafo 1";
+            let p2 = "Parrafo 2";
+            let p3 = "Parrafo 3";
             $('button').on("click", function () {
-                var indice = $(this).index();
-                $("section").hide();
-                $('section').eq(indice).fadeIn();
+                if ($(this).text() == p1) {
+                    $("#sec1").show();
+                    $("#sec2").hide();
+                    $("#sec3").hide();
+                    $(this).toggleClass("active");
+                    $(this).parent().siblings().find('button').removeClass("active");
+                } else if ($(this).text() == p2) {
+                    $("#sec1").hide();
+                    $("#sec2").show();
+                    $("#sec3").hide();
+                    $(this).toggleClass("active");
+                    $(this).parent().siblings().find('button').removeClass("active");
+                } else if ($(this).text() == p3) {
+                    $("#sec1").hide();
+                    $("#sec2").hide();
+                    $("#sec3").show();
+                    $(this).toggleClass("active");
+                    $(this).parent().siblings().find('button').removeClass("active");
+                }
             })
+
+            // $('button').on("click", function () {
+            //     var indice = $(this).index();
+            //     $("section").hide();
+            //     $('section').eq(indice).fadeIn();
+            // })
         });
     </script>
 </body>
