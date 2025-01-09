@@ -141,7 +141,7 @@
                 $(".circulo").css("top", posY); 
             }
 
-            function creaInterval(){
+            function creaInterval(){// agch code
                 fallo = setInterval(moverCirculo, 1000);
             }
 
@@ -165,11 +165,34 @@
                 moverCirculo();
                 score++;
                 $(".puntuacion p").text(`Puntaje: ${score}`);
-                let time = 1;
+                let time = 1; // agch code
                 clearInterval(fallo);
                 creaInterval();
             }); 
         })
+        
     </script>
 </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- agch code -->
